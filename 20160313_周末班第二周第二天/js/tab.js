@@ -8,7 +8,7 @@ var data = null;
 
 //->1、首先获取后台中的数据
 var xhr = new XMLHttpRequest;
-xhr.open("get", "json/data.txt", false);
+xhr.open("get","json/data.txt",false);
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && /^2\d{2}$/.test(xhr.status)) {
         var val = xhr.responseText;
@@ -59,7 +59,7 @@ function sort(n) {
     _this.flag *= -1;
     ary.sort(function (a, b) {
         var curInn = a.cells[n].innerHTML, nexInn = b.cells[n].innerHTML;
-        var curInnNum = parseFloat(a.cells[n].innerHTML), nexInnNum = parseFloat(b.cells[n].innerHTML);
+        var curInnNum = parseFloat(curInn.innerHTML), nexInnNum = parseFloat(nexInn.innerHTML);
         if (isNaN(curInnNum) || isNaN(nexInnNum)) {
             return (curInn.localeCompare(nexInn)) * _this.flag;
         }

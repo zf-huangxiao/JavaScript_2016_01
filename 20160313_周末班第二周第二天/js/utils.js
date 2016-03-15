@@ -5,7 +5,7 @@ var utils = {
             ary = Array.prototype.slice.call(likeAry);
         } catch (e) {
             for (var i = 0; i < likeAry.length; i++) {
-                ary[ary.length] = likeAry[i];
+                ary.push(likeAry[i]);
             }
         }
         return ary;
