@@ -20,29 +20,43 @@ oInput.onfocus=function(){
 	if(this.value==this.defaultValue){
 		this.value="";
 	}
-}
+//	this.parentNode.removeChild(oInput.nextElementSibling);
+};
 
 oInput.onblur=function(){
 	//var reg=/^ *$/;//空字符串验证
 	var reg=/ +/g;//一定要加g
-	
+	var oSpan = document.getElementById("message");
 	//if(reg.test(this.value)){
 	if(!this.value.replace(reg,"").length){
 		this.value=this.defaultValue;
-		var oSpan=document.createElement("span");
-		oSpan.innerHTML="*请输入有效女朋友";
-		oSpan.style.color="red";
-		oSpan.style.fontWeight="bold";	
-		this.parentNode.appendChild(oSpan);
+		if(!oSpan){
+			var oSpan=document.createElement("span");
+			oSpan.id="message"
+			oSpan.innerHTML="*请输入有效女朋友";
+			oSpan.style.color="red";
+			oSpan.style.fontWeight="bold";
+			this.parentNode.appendChild(oSpan);
+		}else{
+			oSpan.innerHTML="*请输入有效女朋友";
+		}
+
 	}else{//如果输入正确，则用绿色字表达“输入正确”
-		this.value=this.value.replace(reg,"")
-		var oSpan=document.createElement("span");
-		oSpan.innerHTML="输入正确";
-		oSpan.style.color="green";
-		oSpan.style.fontWeight="bold";
-		this.parentNode.appendChild(oSpan);	
-		
+		this.value=this.value.replace(reg,"");
+		if(!oSpan){
+			var oSpan=document.createElement("span");
+			oSpan.id="message"
+			oSpan.innerHTML="输入正确";
+			oSpan.style.color="green";
+			oSpan.style.fontWeight="bold";
+			this.parentNode.appendChild(oSpan);
+		}else{
+			oSpan.innerHTML="输入正确";
+			oSpan.style.color="green";
+		}
+
+
 	}
-		
+
 }
 </script>

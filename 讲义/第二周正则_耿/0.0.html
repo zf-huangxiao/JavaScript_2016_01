@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+</head>
+<style>
+    ul li {
+        list-style: none;
+        display: block;
+        height: 20px;
+        margin: 10px;
+    }
+</style>
+<body>
+<ul>
+    <li class="a b">1</li>
+    <li class="b  bc">2</li>
+    <li class="23 r">3</li>
+    <li class="e df">7</li>
+    <li>4</li>
+    <li class="b d b">5
+        6
+    </li>
+</ul>
+<script>
+
+    var eles = document.getElementsByTagName("*");
+    function getEleByClass(str) {
+        str = str.replace(/^ +| +$/g, "");
+        var aClassName = str.split(/ +/);
+        console.log(aClassName);
+        var eles = document.getElementsByTagName("*");
+        for (var i = 0; i < aClassName.length; i++) {
+            var a = [];
+            var reg = new RegExp("(^| +)" + aClassName[i] + "( +|$)");
+            for (var j = 0; j < eles.length; j++) {
+                if (reg.test(eles[j].className)) {
+                    a.push(eles[j])
+                }
+            }
+            eles = a;
+
+        }
+        return eles;
+    }
+    var eles=getEleByClass("b a");
+
+    for (var i = 0; i < eles.length; i++) {
+        eles[i].style.backgroundColor = "blue";
+    }
+
+    console.log(eles)
+</script>

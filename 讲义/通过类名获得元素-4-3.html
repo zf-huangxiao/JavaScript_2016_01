@@ -35,24 +35,25 @@ var eles=document.getElementsByTagName("*");
 function getElesByClass(str){
 	str=str.replace(/^ +| +$/g,"");
 	var aClassName=str.split(/ +/);
+	console.log(aClassName);
 	var eles=document.getElementsByTagName("*");
 	for(var i=0;i<aClassName.length;i++){
 		//eles=byClass(aClassName,eles);
 		var a=[];//准备放筛选结果的
 		var reg=new RegExp("(^| )"+aClassName[i]+"( |$)");
 		for(var j=0;j<eles.length;j++){
-			if(reg.test(eles[i].className)){
-				a.push(eles[i]);	
+			if(reg.test(eles[j].className)){
+				a.push(eles[j]);
 			}
-				
+
 		}
-		eles=a;//相当于byClass方法中的return a这一步	
+		eles=a;//相当于byClass方法中的return a这一步
 	}
 	return eles;
-	
+
 }
 
 for(var i=0;i<eles.length;i++){
-	eles[i].style.backgroundColor="red";	
+	eles[i].style.backgroundColor="red";
 }
 </script>
