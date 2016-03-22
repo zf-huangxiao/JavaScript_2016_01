@@ -10,14 +10,14 @@
 </html>
 <script>
 //模式符g在正则方法里的怪异问题
-var reg=/(^| |)b( |$)/g;
+var reg=/(^| )b( |$)/g;
 /*var str1="b a c";
 var str2="b c a";
 reg.test(str1);//true;
 
 reg.test(str2);//false
 reg.test(str2);//true;
-//以上为什么同一正则对同一个字符串做匹配会出现两种结果 
+//以上为什么同一正则对同一个字符串做匹配会出现两种结果
 
 //做捕获的时候，正则加g,exec方法不会自动的做全文查找
 
@@ -30,7 +30,7 @@ var result=null
 //exec的返回值就是数组，这个数组长度由这个正则的分组的个数决定
 while(result=reg.exec(str3)){//这里是一个等号
 	aResult.push(result);//result是数组
-	
+
 	//如果正则不加g，则这是个死循环。为什么呢？
 }
 alert(aResult)//这是最终的结果(少一个)；aResult是个二维数组
