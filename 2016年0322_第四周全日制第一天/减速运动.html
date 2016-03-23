@@ -34,7 +34,7 @@
     function buffer(ele,target){
         window.clearTimeout(ele.timer);
         function step(){
-            var nSpeed = (target-ele.offsetLeft)/10;
+            var nSpeed = (target-ele.offsetLeft)/20;//20可随意选可，可变
            //在相加之前对nSpeed进行取整运算
             nSpeed=nSpeed>0?Math.ceil(nSpeed):Math.floor(nSpeed);
             console.log(nSpeed);
