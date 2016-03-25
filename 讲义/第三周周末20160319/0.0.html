@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        img{
+            display: block;
+            width: 300px;
+            height:250px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+<img src="default.gif" trueImg = "http://pic1.win4000.com/pic/9/8c/0a08466925.jpg"alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466926.jpg" alt=""/>
+<img src="default.gif" trueImg="http://pic1.win4000.com/pic/9/8c/0a08466924.jpg" alt=""/>
+
+
+<script type="text/javascript">
+    var oImgs=document.getElementsByTagName("img");
+    function loading(){
+        for(var i=0;i<oImgs.length;i++){
+            (function(i){
+
+                var cur=oImgs[i];
+                if(cur.loaded) return;
+                var dh=(document.documentElement.clientHeight||document.body.clientHeight)+(document.documentElement.scrollTop||document.body.scrollTop);
+                if(dh>offset(cur).top+cur.offsetHeight){
+                    var oImg=new Image;
+                    var trueSrc=cur.getAttribute("trueImg")+"?"+Math.random();
+                    oImg.src=trueSrc;
+                    cur.src="o_loading.gif";
+                    oImg.onload=function(){
+                        cur.src=trueSrc;
+                        cur.loaded=true;
+
+                    }
+
+                }
+            })(i)
+
+
+        }
+
+    }
+    window.setTimeout(loading,500);
+    window.onscroll=function(){
+        loading();
+    }
+
+    function offset(ele){
+        var t=ele.offsetTop;
+        var l=ele.offsetLeft;
+        var p=ele.offsetParent;
+        while(p){//判断一下当前计算的元素有没有offsetParent
+            //如果有，则继续向上找
+            if(window.navigator.userAgent.indexOf("MSIE 8")==-1){
+
+                t+=p.offsetTop+p.clientTop;
+                l+=p.offsetLeft+p.clientLeft;
+
+            }else{
+                t+=p.offsetTop;
+                l+=p.offsetLeft;
+            }
+            p=p.offsetParent;
+        }
+        return {left:l,top:t}//把变量l的值赋给这个匿名对象的left属性……
+    }
+</script>
+</body>
+</html>
