@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0;
+
+        }
+        #outer{
+            width: 500px;
+            height: 300px;
+            position:relative;
+            margin: 20px auto;
+
+        }
+        #outer #inner{
+            width: 2000px;
+            height:300px;
+            position: absolute;
+            left:0;
+            right:0;
+
+        }
+        #outer #inner div{
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 100px;
+            font-weight: bold;
+            float: left;
+        }
+        #inner div:nth-child(1){
+            background: blue;
+        }
+        #inner div:nth-child(2){
+            background: green;
+        }
+        #inner div:nth-child(3){
+            background: gold;
+        }
+        #inner div:nth-child(4){
+            background: burlywood;
+        }
+        #btn{
+
+            height: 30px;
+            line-height: 30px;
+            position: absolute;
+            bottom: 20px;
+            list-style: none;
+            margin-left: 150px;
+        }
+        #btn li{
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            font-size: 15px;
+            float: left;
+            background: white;
+            border-radius: 50%;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div>一</div>
+        <div>二</div>
+        <div>三</div>
+        <div>四</div>
+    </div>
+    <ul id="btn">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+</body>
+</html>
