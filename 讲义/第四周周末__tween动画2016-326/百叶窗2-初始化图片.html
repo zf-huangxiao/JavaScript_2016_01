@@ -31,13 +31,13 @@ for(var i=0;i<rows*cols;i++){
 	ele.style.top=-100+"px";;//用行号*height则是当前的top坐标
 	ele.style.opacity=0;
 	ele.style.backgroundPosition="-"+i%cols*100+"px -"+Math.floor(i/cols)*100+"px";
-	
+
 	a.push(ele);
-	
+
 }
 content.onclick=function(){
 	for(var i=0;i<a.length;i++){
-		animate(a[i],{left:a[i].l,top:a[i].t,opacity:1},800);	
+		animate(a[i],{left:a[i].l,top:a[i].t,opacity:1},800);
 	}
 }
 </script>

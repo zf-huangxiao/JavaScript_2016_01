@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<img src="banner1.jpg" width="1000" height="300">
+<!--<img src="banner1.jpg" width="1000" height="300">-->
 <div id="content">
 
 </div>
@@ -40,14 +40,14 @@ for(var i=0;i<rows*cols;i++){
 	ele.style.opacity=1;
 	ele.style.backgroundPosition="-"+i%cols*100+"px -"+Math.floor(i/cols)*100+"px";
 	a.push(ele);
-	
+
 }
 content.onclick=function(){
 	for(var i=0;i<a.length;i++){
 		;(function(i){
 			window.setTimeout(function(){
-				animate(a[i],{left:a[i].l,top:a[i].t,opacity:1},600,2);	
-			},i%cols*200)//
+				animate(a[i],{left:a[i].l,top:a[i].t,opacity:1},600,2);
+			},i%cols*200)
 		})(i);
 	}
 }
