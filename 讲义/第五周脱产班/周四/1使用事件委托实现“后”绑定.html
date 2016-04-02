@@ -21,31 +21,31 @@
 
 //后绑定就是为“后来”创建的元素绑定事件，或者说叫元素还没有创建但事件已经绑定了（或叫活动绑定，预绑定）
 
-/*function clickCounter(){
-	if(this.counter){
-		this.counter++;
-	}else{
-		this.counter=1;	
-	}
-	this.innerHTML=this.counter;
-	
-	if(this.counter==10){
-		var ele=document.createElement("div");
-		this.parentNode.appendChild(ele);	
-		ele.onclick=clickCounter;
-	}
-}
+//function clickCounter(){
+//	if(this.counter){
+//		this.counter++;
+//	}else{
+//		this.counter=1;
+//	}
+//	this.innerHTML=this.counter;
+//
+//	if(this.counter==10){
+//		var ele=document.createElement("div");
+//		this.parentNode.appendChild(ele);
+//		ele.onclick=clickCounter;
+//	}
+//}
+//
+//var eles=document.getElementById("content").getElementsByTagName("div");
+//for(var i=0;i<eles.length;i++){
+//	eles.item(i).onclick=clickCounter;
+//}
 
-var eles=document.getElementById("content").getElementsByTagName("div");
-for(var i=0;i<eles.length;i++){
-	eles.item(i).onclick=clickCounter;	
-}
-*/
 
 document.getElementById("content").onclick=function(e){
 	if(e.target.parentNode.id=="content"){
 		if(e.target.counter){
-			e.target.counter++	
+			e.target.counter++
 		}else{
 			e.target.counter=1;	//如果没有counter属性，则初始化这个属性为1
 		}

@@ -12,7 +12,7 @@
 <script>
 function bind(ele,type,fn){
 	if(ele.addEventListener){
-		ele.addEventListener(type,fn,false);	
+		ele.addEventListener(type,fn,false);
 	}else if(ele.attachEvent){
 		ele.attachEvent("on"+type,fn);
 	}
@@ -25,7 +25,7 @@ function unbind(ele,type,fn){
 	}else if(ele.detachEvent){
 		ele.detachEvent("on"+type,fn);
 	}
-	
+
 }
 
 var ele=document.getElementsByTagName("a").item(0);
