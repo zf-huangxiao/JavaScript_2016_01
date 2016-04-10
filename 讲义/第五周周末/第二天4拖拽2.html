@@ -20,7 +20,7 @@
 
 <body>
 <div id="div1">
-
+	<img src="b40ff7kummjfp7e.jpg" alt="" style="width:100px;height: 100px;"/>
 </div>
 
 <div id="div2" style="background:blue; top:300px; left:150px;"></div>
@@ -45,21 +45,21 @@ function down(e){
 		var _this=this;
 		this.MOVE=function(e){move.call(_this,e)}
 		this.UP=function(e){up.call(_this,e)}
-		
+
 		function processThis(fn,obj){//让fn在运行的时候功能不变，但this无条件的指向obj
 			return function (e){fn.call(obj,e)}
 		}
 		this.MOVE=processThis(move,this);
 		this.UP=processThis(up,this);
-		
+
 		//使用原生的Function.prototype.bind实现
 		this.MOVE=move.bind(this);//原理和上边写的processThis一样
 		this.UP=up.bind(this);
-		
-		
-		
-		
-		
+
+
+
+
+
 		on(document,"mousemove",this.MOVE);//每个方法里的this指向当前被拖拽的元素
 		on(document,"mouseup",this.UP);
 	}
@@ -74,12 +74,12 @@ function up(e){
 	if(this.releaseCapture){
 		this.releaseCapture();
 		off(this,"mousemove",move);
-		off(this,"mouseup",up);	
+		off(this,"mouseup",up);
 	}else{
 		off(document,"mousemove",this.MOVE);
 		off(document,"mouseup",this.UP);
 	}
 }
-	
-	
+
+
 </script>
