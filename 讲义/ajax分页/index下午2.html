@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style type="text/css">
-table,tr,td,th{ border:1px blue solid; border-collapse:collapse;}
+table,tr,td,th{
+	border:1px blue solid;       border-collapse:collapse;
+
+}
 td,th{  width:80px;  text-align:center;}
 #nav span,#nav a{ float:left; width:60px; height:1.3em; line-height:1.3em; text-align:center; margin:5px; background:#6FF}
 #nav div{ float:left;}
@@ -80,7 +83,7 @@ function init(data,recordNum){//data是传进来的数据，recordNum是每一�
 			var oTr=document.createElement("tr");
 			for(var attr in a[i]){
 				var oTd=document.createElement("td");
-				oTd.innerHTML=a[i][attr];	
+				oTd.innerHTML=a[i][attr];
 				oTr.appendChild(oTd);
 			}
 			oTbody.appendChild(oTr);
@@ -90,7 +93,7 @@ function init(data,recordNum){//data是传进来的数据，recordNum是每一�
 			var eles=nav.getElementsByTagName("a");
 			if(eles.length){//必须要存在a
 				for(var i=0;i<eles.length;i++){
-					eles[i].className="";	
+					eles[i].className="";
 				}
 				eles[n].className="current";
 			}
@@ -98,7 +101,7 @@ function init(data,recordNum){//data是传进来的数据，recordNum是每一�
 	}
 	function prevPage(){
 		if(currentPage-1>=0){
-			showPage(--currentPage);	
+			showPage(--currentPage);
 		}
 	}
 	function nextPage(){
