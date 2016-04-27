@@ -9,7 +9,7 @@ html,body{
 }
 #main{
     width: 640px;
-    height: 1008px;
+    height:1008px;
     position: absolute;
     left:50%;
     margin-left: -320px;
